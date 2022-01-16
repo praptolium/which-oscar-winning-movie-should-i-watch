@@ -1,0 +1,95 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@font-face {
+   font-family: 'futura-book';
+   src: url('app/assets/fonts/futura-book.ttf')
+}
+
+.content {
+  height: 100vh;
+}
+
+.generator {
+  display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.footer {
+  width: 100%;
+  height: 5vh;
+  margin-top: 3vh;
+}
+
+.title {
+  margin-top: 5vh;
+}
+
+.favicon-credit {
+  p {
+    font-size: 2vh;
+    color:rgba(50, 51, 42, 0.3);
+    margin: 0;
+  }
+  a {
+    color:rgba(50, 51, 42, 0.6);
+  }
+}
+
+.bmc-btn {
+  background-color: rgba(50, 51, 42, 0.6);
+}
+.bmc-btn:hover {
+  background-color: rgba(50, 51, 42, 1);
+}
+
+a.bmc-btn {
+  font-size: 2vh;
+  color:rgba(50, 51, 42, 1);
+  height: 4vh;
+  min-width: 20vh;
+}
+a:hover.bmc-btn {
+  color: white;
+}
+
+body {
+  font-family: 'futura-book';
+  overflow: hidden;
+  color: white;
+}
+
+button {
+  font-size: 1.125rem;
+}
+
+.btn {
+  color: white;
+  border: 2px solid white;
+  border-radius: 0;
+}
+.btn:hover {
+  background-color: white;
+  color: rgba(50, 51, 42, 1);
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+ul {
+  height: 64vh;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+li {
+  height: auto;
+  padding: auto;
+  img {
+    border-radius: 4px;
+    height: 54vh;
+  }
+}

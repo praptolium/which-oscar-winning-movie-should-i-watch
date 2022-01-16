@@ -1,0 +1,29 @@
+<div class="content container">
+  <div class="title col-12 col-md-8 mx-auto">
+    <h1 class="text-center">Which Oscar Winning Movie Should I Watch?</h1>
+  </div>
+  <div data-controller="fetch-oscar-movies" class="generator container">
+    <ul class="d-flex justify-content-center" data-ombd-api-key="<%= ENV['OMDB_API_KEY'] %>"></ul>
+    <button type="button" data-action="click->fetch-oscar-movies#greet" class="btn col-8 col-sm-4 col-lg-2 mx-auto">Generate a film!</button>
+  </div>
+  <div class="footer d-inline-flex flex-row justify-content-between">
+    <div class="favicon-credit">
+      <p>Icons made by <a
+                      href="https://www.freepik.com"
+                      title="Freepik">Freepik
+                    </a> from
+                    <a href="https://www.flaticon.com/"
+                    title="Flaticon">www.flaticon.com</a>
+      </p>
+    </div>
+    <div class="buy-me-a-coffee">
+      <script type="text/javascript"
+              src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
+              data-name="bmc-button" data-slug="clarkm02"
+              data-color="rgba(50, 51, 42, 0.6)" data-emoji="🚀"  data-font="Poppins"
+              data-text="Support Me" data-outline-color="#ffffff"
+              data-font-color="#ffffff" data-coffee-color="#FFDD00" >
+      </script>
+    </div>
+  </div>
+</div>

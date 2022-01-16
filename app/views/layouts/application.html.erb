@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="author" content="Matthew Clark">
+    <meta name="twitter:creator" content="@praptolium">
+    <meta name="description" content="This program randomly generates a movie that has won an Oscar.  Not sure what to watch this evening?  Why not give the Which Oscar Winning Movie Should I Watch? a spin!?">
+    <meta property="og:image" content="images/Decorative_Trophies.jpeg">
+    <meta property="og:image:alt" content="Many gold Academy Award statues lined up in a row">
+    <meta property="og:description" content="This program randomly generates a movie that has won an Oscar.  Not sure what to watch this evening?  Why not give the Which Oscar Winning Movie Should I Watch? a spin!?">
+    <meta property="og:title" content="Which Oscar Winning Movie Should I Watch?">
+
+    <%= favicon_link_tag asset_path('favicon.ico') %>
+    <title>Which Oscar Winning Movie Should I Watch?</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="video-bg">
+      <div id="player"></div>
+      <div class="bg-overlay"></div>
+    </div>
+    <%= yield %>
+    <script>
+      // 2. This code loads the IFrame Player API code asynchronously.
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '390',
+          width: '640',
+          videoId: '48M0L7yaus8',
+          playerVars: {
+            controls: '0',
+            autoplay: '1',
+            mute: '1',
+            showinfo: '0',
+            autohide: '1',
+            modestbranding: '1',
+            start: '<%= rand(20..550) %>'
+          },
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.PLAYING && !done) {
+          setTimeout(onYouTubeIframeAPIReady, 15000);
+          done = true;
+        }
+      }
+    </script>
+  </body>
+</html>
