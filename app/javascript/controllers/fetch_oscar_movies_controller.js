@@ -29,7 +29,7 @@ export default class extends Controller {
         const movies = [...$html.querySelectorAll(".winner")].map((e) => e.childNodes[1].innerText);
         const randomMovieName = movies[Math.floor(Math.random() * movies.length)]
         console.log(randomMovieName)
-        fetch(`http://www.omdbapi.com/?s=${randomMovieName}&apikey=${OMDB_API_KEY}`)
+        fetch(`https://www.omdbapi.com/?s=${randomMovieName}&apikey=${OMDB_API_KEY}`)
           .then(response => response.json())
           .then((data) => {
             const movie = `<li class="list-inline-item">
