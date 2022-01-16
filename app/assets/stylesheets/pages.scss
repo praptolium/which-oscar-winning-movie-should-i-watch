@@ -3,8 +3,12 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 @font-face {
-   font-family: 'futura-book';
-   src: url('app/assets/fonts/futura-book.ttf')
+    font-family: 'futura_bkbook';
+    src: url('futura-book-webfont.woff2') format('woff2'),
+         url('futura-book-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
 .content {
