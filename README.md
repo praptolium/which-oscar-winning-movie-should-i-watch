@@ -1,21 +1,54 @@
-# README
+# Which Oscar Winning Movie Should I Watch? 
 
-Which Oscar Winning Movie Should I Watch? 
+### Author details
 
-Here's the scenario: 
+Author: Matthew Clark 
 
-It's Sunday night.  
-Dinner? Eaten.  
-Dishes? Done.
-Meal-prep? Ready. 
+Date of publication: 2 March 2022
 
-You're ready to cap off a long week, collapse on the couch and watch Netflix. ... or Hulu, or Stan, or Amazon Prime ... You get the idea!
+Twitter: [@MattDoesRails](https://twitter.com/MattDoesRails)
 
-That's when it hits: Decision Fatigue. 
+### Description
 
-You scroll.  You swipe.  You look at trailer after trailer...
+If you're not sure what movie you want to watch, click the button: `Generate a film!`, and the application will randomly generate the movie poster of a movie that has won an Oscar for "Best Picture". 
 
-90 minutes later, you end up watching the same dumb movie you've seen a million times. 
+This application was made in Ruby on Rails. 
 
-If only there were a program out there to choose a movie for you that won't make you feel like you've wasted 2 hours of your life ... 
+Upon clicking on `Generate a film!`, a Javascript function is called using stimulus. 
 
+The Javascript function has two steps. 
+
+##### Step one 
+1. Makes an API call to the Wikipedia API (MediaWiki)
+2. Parses the list of all movies that won an Oscar for "Best Picture", and; 
+3. Randomly selects one of the films in this list.  
+
+##### Step two
+1. Then, the name of the selected film is isolated 
+2. A call to the OMBd API searches the database using the name, and; 
+3. The movie poster image found is injected into the HTML. 
+
+### Style
+
+The background is an embedded video from youtube, using the following playerVars: 
+```
+       playerVars: {
+        controls: '0',
+        autoplay: '1',
+        loop: '1',
+        playlist: '{video_id}',
+        mute: '1',
+        showinfo: '0',
+        autohide: '1',
+        modestbranding: '1',
+        start: '{between 20 and 500}'
+        }
+```
+
+### Collaboration
+
+The goal of this project is to add to my portfolio of projects for prospective employers.  
+
+If you would like to collaborate on this project, you can contact me on [Twitter](https://twitter.com/MattDoesRails), [LinkedIn](https://www.linkedin.com/in/clarkm02/) or [Malt](https://www.malt.fr/profile/matthewclark)
+
+Otherwise, if you would like to collaborate on a different project, I am `#OpenToWork`!
