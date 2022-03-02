@@ -33,7 +33,7 @@ export default class extends Controller {
           .then(response => response.json())
           .then((data) => {
             const movie = `<li class="list-inline-item">
-              <img src="${data.Search[0]["Poster"]}" alt="">
+              <img src="${data.Search[0]["Poster"]}" alt="Movie poster for ${randomMovieName}">
               <p class="text-center">${data.Search[0]["Title"]}</p>
               <!-- ${randomMovieName} -->
               </li>`;
